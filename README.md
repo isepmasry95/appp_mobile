@@ -1,6 +1,6 @@
 # II.3510-Android-Demo
 Simple example of an Android application, which showcases navigation between Activities, the use of ListViews, 
-and the consumption of a web service.
+and the consumption of a web service. This example has been developed for the II.3510 mobile development course at Institut Supérieur d'Électronique de Paris (ISEP), Paris, France.
 
 This application uses https://jsonplaceholder.typicode.com/ to retrieve data from a dummy web service.
 
