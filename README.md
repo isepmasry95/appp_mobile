@@ -21,4 +21,4 @@ uses all the available resources except for Photos (because there are too many p
 number of photos we get from a single request).
 
 The requests are made using Android Volley (more information on this particular library here: 
-https://developer.android.com/training/volley/index.html). A similar implementation is also made using the AsyncTask class.
+https://developer.android.com/training/volley/index.html). A similar implementation will also be made using the AsyncTask class in a future commit.
