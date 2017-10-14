@@ -2,6 +2,7 @@ package fr.patrickwang.androidappdemo;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,11 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class RequestActivity extends AppCompatActivity {
     private final String URL_BASE = "https://jsonplaceholder.typicode.com";
@@ -41,7 +47,8 @@ public class RequestActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                doQuery();
+                String url = URL_BASE + "/" + resourceString;
+                doQuery(url);
             }
         });
     }
@@ -50,11 +57,10 @@ public class RequestActivity extends AppCompatActivity {
      * This method uses classes from the Android Volley library to perform an HTTP GET request.
      * Android Volley was introduced as a substitute to the AsyncTask class, and allows for asynchronous requests.
      * More info here: https://developer.android.com/training/volley/index.html
+     * @param url The URL of the Web service
      */
-    private void doQuery() {
+    private void doQuery(String url) {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        String url = URL_BASE + "/" + resourceString;
-
         // Method stub:
         // JsonArrayRequest(int method, String url, JSONArray jsonRequest, Listener<JSONArray> listener, ErrorListener errorListener)
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
