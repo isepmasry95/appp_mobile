@@ -21,4 +21,7 @@ uses all the available resources except for Photos (because there are too many p
 number of photos we get from a single request).
 
 The requests are made using Android Volley (more information on this particular library here: 
-https://developer.android.com/training/volley/index.html). A similar implementation will also be made using the AsyncTask class in a future commit.
+https://developer.android.com/training/volley/index.html). 
+
+In the courses, we mentioned the AsyncTask class. This class is used when a long task needs to be executed asynchronously. This prevents the main UI thread from locking and allows for
+smooth user experience. We are not going to showcase an implementation of the AsyncTask as it is much easier to use Google Volley.
